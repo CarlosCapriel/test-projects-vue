@@ -1,28 +1,18 @@
 <template>
   <div class="container mx-auto my-auto">
     <h1>{{ msg }}</h1>
-
-    <div class="my-5 mx-auto max-w-sm bg-gray-700 shadow-xl">
-      <img src="../assets/spacemen.jpg" class="w-full">
-      <div class="text-gray-200 text-left px-6 py-4">
-        <h1 class="text-lg font-semibold">Title of card</h1>
-        <p class="text-sm pb-3">
-          The description of the card you know basic information
+    <card :src="direccionImg" :hashtags="hashtags">
+      <template v-slot:titleCard>
+        Title of Card
+      </template>
+      <template v-slot:content>
+        The description of the card you know basic information
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Earum quod rerum tenetur illum dolorum voluptatum quae,
            reiciendis perferendis ea ab? Quaerat eius voluptatem,
            illum rerum ducimus nihil nulla amet repellendus?
-        </p>
-      </div>
-      <div class="px-6 py-4">
-        <span class="inline-block text-gray-200 bg-gray-500 px-3 py-1 rounded-full mx-3">
-          #themanonthemoon
-        </span>
-        <span class="inline-block text-gray-200 bg-gray-500 px-3 py-1 rounded-full mx-3">
-          #spaceman
-        </span>
-      </div>
-    </div>
+      </template>
+    </card>
     <div class="my-5 border-2 p-5 bg-blue-500 lg:bg-green-600 rounded-lg shadow-lg">
       <h1 class="mb-5 text-2xl text-gray-200 text-left uppercase">Title of content</h1>
       <p class=" text-xl sm:text-base text-left">
@@ -35,10 +25,26 @@
 </template>
 
 <script>
+import spaceMan from '@/assets/spacemen.jpg';
+import Card from './Card.vue';
+
 export default {
   name: 'HelloWorld',
+  components: {
+    Card,
+  },
   props: {
     msg: String,
+  },
+  data() {
+    return {
+      hashtags: ['themanonthemoon', 'spaceman'],
+      // Razón por el cual pasamos la imagen de este modo
+      // El problema es que cuando pasas una imagen desde los assets, esto en realidad
+      // se pasa como un texto en los componentes y por ello no muestra nada,
+      // por que la etiqueta imagen de html espera una url
+      direccionImg: spaceMan,
+    };
   },
 };
 </script>
