@@ -9,11 +9,7 @@
         <button id="boton" @click="showMenu"
                 class="flex items-center px-3 py-2 border rounded border-t-2
                         text-gray-200 hover:text-gray-100 hover:bg-gray-100">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"
-          class="h-3 w-3 fill-current">
-            <path d="M0 0h24v24H0V0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-          </svg>
+          <icon-base class="h-3 w-3 fill-current"> <menu-icon></menu-icon> </icon-base>
         </button>
       </div>
       <div id="menu" class="w-full block flex-grow lg:flex lg:items-center lg:w-auto hidden">
@@ -34,8 +30,14 @@
 </template>
 <script>
 import iconPage from '@/assets/test_tube.svg';
+import IconBase from '@/components/IconBase.vue';
+import MenuIcon from '@/components/icons/Menu.vue';
 
 export default {
+  components: {
+    IconBase,
+    MenuIcon,
+  },
   data() {
     return {
       iconoWeb: iconPage,
