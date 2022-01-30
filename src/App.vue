@@ -16,11 +16,11 @@
         <div class="text-sm lg:flex-grow">
           <router-link to="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200
                 hover:text-gray-100 mr-4">
-            Home
+            Inicio
           </router-link>
           <router-link to="/about" class="block mt-4 lg:inline-block lg:mt-0 text-gray-200
                   hover:text-gray-100 mr-4">
-            About
+            Nosotros
           </router-link>
         </div>
       </div>
