@@ -48,11 +48,23 @@ export default {
       const menu = document.getElementById('menu');
       menu.classList.toggle('hidden');
     },
+    handleScroll(evt, el) {
+      if (window.scrollY > 50) {
+        el.setAttribute(
+          'style',
+          'opacity: 1; transform: translate3d(0, -10px, 0)',
+        );
+      }
+      return window.scrollY > 100;
+    },
   },
 };
 </script>
 
 <style>
+.box {
+  transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
+}
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
