@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto my-auto">
-    <h1>{{ msg }}</h1>
+    <h1 v-theme="'primary'">{{ msg }}</h1>
     <card :src="direccionImg" :hashtags="hashtags">
       <template v-slot:titleCard>
         Title of Card
