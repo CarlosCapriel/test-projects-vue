@@ -19,4 +19,16 @@ app.directive('theme', {
   },
 });
 
+app.directive('scroll', {
+  mounted(el, binding) {
+    // eslint-disable-next-line func-names
+    const f = function (evt) {
+      if (binding.value(evt, el)) {
+        window.removeEventListener('scroll', f);
+      }
+    };
+    window.addEventListener('scroll', f);
+  },
+});
+
 app.use(router).mount('#app');

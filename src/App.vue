@@ -25,6 +25,17 @@
         </div>
       </div>
     </div>
+    <div>
+      <h1>scroll me</h1>
+      <div
+        v-scroll="handleScroll"
+        class="box">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore
+        adipisci beatae iure iste ipsum necessitatibus soluta laudantium culpa,
+        eos facere, quisquam odit tempora vitae praesentium repellat impedit molestiae
+        voluptatem molestias!</p>
+      </div>
+    </div>
   </div>
   <router-view/>
 </template>
